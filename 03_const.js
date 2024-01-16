@@ -1,5 +1,5 @@
 // const test1;
-// 결과값 --> Uncaught SyntaxError: Missing initializer in const declaration
+// --> output: Uncaught SyntaxError: Missing initializer in const declaration
 
 const test2 = 10;
 // const test2 = 20; --> 재선언 불가능
