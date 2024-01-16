@@ -16,3 +16,7 @@ booleanA === booleanC; // --> output: false;
 // undefined
 let age; // --> output: undefined;
 
+// 주의해야할 점
+let gender = "";
+gender; // --> ''
+typeof gender; // --> output: undefined (x), string (o)
