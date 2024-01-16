@@ -71,3 +71,40 @@ birth = 981218;
 
 
 <br>
+
+
+## truthy & falsy한 값이란?
+> truthy는 '참 같은 값'을, falsy는 '거짓 같은 값'을 의미한다. 다시 말해, boolean(true/false)을 기대하는 문맥(if, &&, 연산자 등)에서 truthy는 true로 falsy는 false로 평가가 되는 값이다.
+
+<br>
+
+- falsy한 값<br>
+
+| 값 | 타입 | 설명 |
+| :---: | :---: | :---: |
+| null | Null | 아무런 값도 없음을 의미 |
+| undefined | Undefined | 값을 할당하지 않은 변수의 결과 값 |
+| false | Boolean | false 키워드 |
+| NaN | Number | 숫자가 아님을 의미 |
+| 0 | Number | 0(0.0과 0x0 등도 포함) |
+| -0 | Number | 0(-0.0과 -0x0 등도 포함) |
+| 0n | BigInt | 매우 큰 값 |
+| "" | String | 비어있는 문자열의 값('', ``도 포함) |
+
+<br>
+
+- truthy한 값<br>
+: 위의 falsy한 값으로 정의된 것이 아니면 모두 참 같은 값으로 평가한다.<br><br>
+(ex) true, { }, [ ], 42, "0", "false", 3.14...
+
+
+
+
+
+
+
+
+
+
+
+
