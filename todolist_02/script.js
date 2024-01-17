@@ -5,7 +5,7 @@ const TodoList = document.getElementById('TodoList');
 function addTodo (event) {
     event.preventDefault();
 
-    if (TodoInput.value == '') return
+    if (!TodoInput.value) return;
 
     const newTodo = document.createElement('li');
     newTodo.textContent = TodoInput.value;
