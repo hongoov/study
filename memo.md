@@ -63,9 +63,7 @@ birth = 981218;
 # 2024-01-16
 
 ## 원시 값이란 무엇인가?
-```
-원시 값이란, 객체(object)가 아니면서 함수(method) 또는 속성(property)도 가지지 않는 데이터이다.
-```
+> 원시 값이란, 객체(object)가 아니면서 함수(method) 또는 속성(property)도 가지지 않는 데이터이다.
 
 - string : 문자를 표현하는 데 사용되며, '', ""로 작성된다.
 - number : 숫자를 표현하고 다룰 때 사용한다.
@@ -80,9 +78,7 @@ birth = 981218;
 
 
 ## truthy & falsy한 값이란?
-```
-truthy는 '참 같은 값'을, falsy는 '거짓 같은 값'을 의미한다. 다시 말해, boolean(true/false)을 기대하는 문맥(if, &&, 연산자 등)에서 truthy는 true로 falsy는 false로 평가가 되는 값이다.
-```
+> truthy는 '참 같은 값'을, falsy는 '거짓 같은 값'을 의미한다. 다시 말해, boolean(true/false)을 기대하는 문맥(if, &&, 연산자 등)에서 truthy는 true로 falsy는 false로 평가가 되는 값이다.
 
 <br>
 
@@ -164,10 +160,9 @@ truthy는 '참 같은 값'을, falsy는 '거짓 같은 값'을 의미한다. 다
 <br>
 
 ### 정리
-```
 - async와 defer 스크립트는 다운로드 시에 페이지 렌더링(DOM 생성)을 막지 않는다.
 - async와 defer의 적절한 사용은 사용자의 UX를 향상시킬 수 있다.
-```
+
 
 
 
