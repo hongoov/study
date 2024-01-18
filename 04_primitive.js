@@ -10,13 +10,13 @@ const birth = 19930206;
 const booleanA = 100;
 const booleanB = 100;
 const booleanC = 200;
-booleanA === booleanB; // --> output: true;
-booleanA === booleanC; // --> output: false;
+booleanA === booleanB; // true;
+booleanA === booleanC; // false;
 
 // undefined
-let age; // --> output: undefined;
+let age; // undefined;
 
 // 주의해야할 점
 let gender = "";
-gender; // --> ''
-typeof gender; // --> output: undefined (x), string (o)
+gender; // ''
+typeof gender; // undefined (x), string (o)
