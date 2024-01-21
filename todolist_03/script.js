@@ -32,9 +32,6 @@ TodoList.addEventListener('click', function(event) {
 		const ModifyTodo = event.target.previousElementSibling;
 
 		ModifyTodo.disabled = !ModifyTodo.disabled;
-// 연산자 
-// 객체 무엇인지
-// 이벤트 위임이 뭔지 왜 필요한지 이거 안쓰면 뭐가 안좋은건지?
 
 		event.target.classList.toggle('bx-pencil');
 		event.target.classList.toggle('bx-check');
