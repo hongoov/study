@@ -1,6 +1,11 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Oswald:wght@200..700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Noto Sans KR", sans-serif;
 }
@@ -10,14 +15,15 @@ header {
     text-align: center;
 }
 
-#title a {
+#Title a {
     font-family: "Oswald";
     font-size: 48px;
     font-weight: 500;
     color: #000;
+    text-decoration: none;
 }
 
-#wrapper {
+#Wrapper {
     position: relative;
     top: 20px;
     left: 50%;
@@ -27,25 +33,24 @@ header {
     padding: 50px;
 }
 
-#wrapper .container {
+#Wrapper #Container {
     display: flex;
     flex-direction: column;
 }
 
-#wrapper .container .inputBox {
+#Wrapper #Container #TodoForm {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    margin-bottom: 50px;
 }
 
-#wrapper .container .inputBox #inputField {
+#Wrapper #Container #TodoForm #TodoInput {
     width: 90%;
-    height: 36px;
     padding-left: 12px;
 }
 
-#wrapper .container .inputBox #addToDo {
+#Wrapper #Container #TodoForm #SubmitBtn {
     width: 40px;
     height: 40px;
     background: #000 url(./images/plus.png) center no-repeat;
@@ -53,33 +58,31 @@ header {
     cursor: pointer;
 }
 
-#wrapper .container #toDoList {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-}
-
-#wrapper .container #toDoList>div {
+#Wrapper #Container #TodoList > li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 20px;
+    align-items: center;
+    width: 100%;
+    list-style: none;
 }
 
-#wrapper .container #toDoList p {
-    width: 92%;
+#Wrapper #Container #TodoList > li > input {
+    width: 85%;
+    height: 30px;
+    background: none;
+    border: 1px solid #000;
+    outline: none;
+    font-size: 16px;
+    text-indent: 8px;
 }
 
-#wrapper .container #toDoList input {
-    width: 18px;
-    height: 18px;
+#Wrapper #Container #TodoList > li > input.checked {
+    text-decoration: line-through;
 }
 
-#wrapper .container #toDoList button {
-    width: 18px;
-    height: 18px;
-    background: #000 url(./images/close.png) center no-repeat;
-    background-size: 14px 14px;
+#Wrapper #Container #TodoList > li > input:disabled {
+    font-size: 16px;
     border: none;
-    cursor: pointer;
+    outline: none;
 }

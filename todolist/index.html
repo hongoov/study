@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
-    <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <h1 id="title">
+        <h1 id="Title">
             <a href="index.html">TO DO LIST</a>
         </h1>
     </header>
 
-    <div id="wrapper">
-        <div class="container">
-            <div class="inputBox">
-                <input id="inputField" type="text" placehold5er="할 일을 입력해주세요." autofocus>
-                <button id="addToDo"></button>
-            </div>
+    <div id="Wrapper">
+        <div id="Container">
+            <form id="TodoForm">
+                <input id="TodoInput" type="text">
+                <button id="SubmitBtn" type="submit"></button>
+            </form>
             
-            <div id="toDoList">
-                <!-- 할 일 목록 -->
-            </div>
+            <ul id="TodoList">
+                <!-- 할 일 목록이 들어갈 곳 -->
+            </ul>
         </div>
     </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>

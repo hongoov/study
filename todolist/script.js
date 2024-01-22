@@ -1,34 +1,61 @@
-const inputBox = document.getElementById('inputField');
-const addToDo = document.getElementById('addToDo');
-const toDoList = document.getElementById('toDoList');
+const TodoForm = document.getElementById('TodoForm');
+const TodoInput = document.getElementById('TodoInput');
+const SubmitBtn = document.getElementById('SubmitBtn');
+const TodoList = document.getElementById('TodoList');
 
-addToDo.addEventListener('click', function(){
-    const taskList = document.createElement('div');
-    const list = document.createElement('p');
-    const checkBox = document.createElement('input');
-    const closeBtn = document.createElement('button');
+function addTodo (event) {
+    event.preventDefault();
 
-    if (!inputBox.value)
-        alert("할 일을 입력해주세요.");
-    else {
-        toDoList.appendChild(taskList);
+    if (!TodoInput.value) return;
 
-        taskList.appendChild(checkBox);
-        checkBox.type = "checkbox"
-        
-        taskList.appendChild(list);
-        list.innerText = inputBox.value;
+    const newTodo = document.createElement('li');
+    const ListInput = document.createElement('input');
+    const CheckBtn = document.createElement('i');
+    const ModifyBtn = document.createElement('i');
+    const DeleteBtn = document.createElement('i');
 
-        taskList.appendChild(closeBtn);
-        
-        inputBox.value= "";
+    CheckBtn.className = 'checked-todo bx bx-checkbox bx-sm';
+
+    ListInput.className = 'ListInput';
+    ListInput.type = 'text';
+    ListInput.disabled = true;
+    ListInput.value = TodoInput.value;
+
+    ModifyBtn.className = 'modify-todo bx bx-pencil bx-sm';
+    ModifyBtn.style.cursor = 'pointer';
+
+    DeleteBtn.className = 'bx bx-trash bx-sm'
+    DeleteBtn.style.cursor = 'pointer';
+
+    TodoList.appendChild(newTodo);
+    newTodo.appendChild(CheckBtn);
+    newTodo.appendChild(ListInput);
+    newTodo.appendChild(ModifyBtn);
+    newTodo.appendChild(DeleteBtn);
+
+    TodoInput.value = '';
+
+    DeleteBtn.addEventListener('click', function () {
+        TodoList.removeChild(newTodo);
+    });
+
+    CheckBtn.addEventListener('click', function (event) {
+        ListInput.classList.toggle('checked');
+
+        event.target.classList.toggle('bx-checkbox');
+        event.target.classList.toggle('bx-checkbox-checked');
+    });
+};
+
+TodoForm.addEventListener('submit', addTodo);
+
+TodoList.addEventListener('click', function (event) {
+    if (event.target.classList.contains('modify-todo')) {
+        const ModifyTodo = event.target.previousElementSibling;
+
+        ModifyTodo.disabled = !ModifyTodo.disabled;
+
+        event.target.classList.toggle('bx-pencil');
+        event.target.classList.toggle('bx-check');
     };
-
-    checkBox.addEventListener('click', function () {
-        list.style.textDecoration = "line-through";
-    });
-
-    closeBtn.addEventListener('click', function () {
-        toDoList.removeChild(taskList);
-    });
 });
