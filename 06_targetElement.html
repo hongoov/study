@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Element Example</title>
+
+    <style>
+        body {
+            width: 500px;
+            height: 500px;
+            padding: 50px;
+            border: 2px solid red;
+            font-size: 30px;
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            padding: 50px;
+            border: 2px solid blue;
+        }
+
+        p {
+            width: 200px;
+            height: 50px;
+            padding: 50px;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    body
+    <div>
+        div
+        <p>p</p>
+    </div>
+
+    <script>
+        const body = document.querySelector('body');
+
+        function Alert(event) {
+            alert(
+                `타겟 엘리먼트 : ${event.target.tagName}\n현재 엘리먼트 : ${this.tagName}`
+            );
+        };
+
+        body.addEventListener('click', Alert)
+    </script>
+</body>
+</html>
