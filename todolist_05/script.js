@@ -9,13 +9,14 @@ function addTodo (event) {
     if (!TodoInput.value) return;
 
     const newTodo = document.createElement('li');
-    const CheckBtn = document.createElement('input');
     const ListInput = document.createElement('input');
+    const CheckBtn = document.createElement('i');
     const ModifyBtn = document.createElement('i');
     const DeleteBtn = document.createElement('i');
 
-    CheckBtn.type = 'checkbox';
+    CheckBtn.className = 'checked-todo bx bx-checkbox bx-sm';
 
+    ListInput.id = 'ListInput';
     ListInput.type = 'text';
     ListInput.disabled = true;
     ListInput.value = TodoInput.value;
@@ -27,8 +28,8 @@ function addTodo (event) {
     DeleteBtn.style.cursor = 'pointer'
 
     TodoList.appendChild(newTodo);
-    newTodo.appendChild(CheckBtn);
     newTodo.appendChild(ListInput);
+    newTodo.appendChild(CheckBtn);
     newTodo.appendChild(ModifyBtn);
     newTodo.appendChild(DeleteBtn);
 
@@ -38,8 +39,11 @@ function addTodo (event) {
         TodoList.removeChild(newTodo);
     });
 
-    CheckBtn.addEventListener('click', function () {
+    CheckBtn.addEventListener('click', function (event) {
         ListInput.classList.toggle('checked');
+
+        event.target.classList.toggle('bx-checkbox');
+        event.target.classList.toggle('bx-checkbox-checked');
     });
 };
 
@@ -47,7 +51,7 @@ TodoForm.addEventListener('submit', addTodo);
 
 TodoList.addEventListener('click', function (event) {
     if (event.target.classList.contains('modify-todo')) {
-        const ModifyTodo = event.target.previousElementSibling;
+        const ModifyTodo = event.target.previousElementSibling.previousElementSibling;
 
         ModifyTodo.disabled = !ModifyTodo.disabled;
 
