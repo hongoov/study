@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation Example 1</title>
+</head>
+<body>
+    <div id="Menu">
+        <button data-action="save">SAVE</button>
+        <button data-action="reset">RESET</button>
+        <button data-action="load">LOAD</button>
+    </div>
+
+    <script>
+        const Menu = document.getElementById('Menu');
+
+        const ActionFuction = {
+            save: () => alert('SAVE button'),
+            reset: () => alert('RESET button'),
+            load: () => alert('LOAD button')
+        }
+
+        Menu.addEventListener('click', e => {
+            const action = e.target.dataset.action;
+
+            if (action) {
+                ActionFuction[action]();
+            };
+        });
+    </script>
+</body>
+</html>
