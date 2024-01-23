@@ -71,10 +71,12 @@ header {
     width: 85%;
     height: 30px;
     background: none;
-    border: 1px solid #000;
+    border: none;
     outline: none;
     font-size: 16px;
     text-indent: 8px;
+
+    border-bottom: 1px solid #000;
 }
 
 #Wrapper #Container #TodoList > li > input.checked {
