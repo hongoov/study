@@ -1,1 +1,0 @@
-git mv는 git mv일 뿐이다.
