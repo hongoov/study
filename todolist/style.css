@@ -58,6 +58,10 @@ header {
     cursor: pointer;
 }
 
+#Wrapper #Container #TodoForm #SubmitBtn:hover {
+    filter: invert(1);
+}
+
 #Wrapper #Container #TodoList > li {
     display: flex;
     flex-direction: row;
