@@ -1,6 +1,5 @@
 const TodoForm = document.getElementById('TodoForm');
 const TodoInput = document.getElementById('TodoInput');
-const SubmitBtn = document.getElementById('SubmitBtn');
 const TodoList = document.getElementById('TodoList');
 
 function addTodo (event) {
@@ -14,17 +13,16 @@ function addTodo (event) {
     const ModifyBtn = document.createElement('i');
     const DeleteBtn = document.createElement('i');
 
-    CheckBtn.className = 'checked-todo bx bx-checkbox bx-sm';
-
-    ListInput.id = 'ListInput';
     ListInput.type = 'text';
     ListInput.disabled = true;
     ListInput.value = TodoInput.value;
 
+    CheckBtn.className = 'checked-todo bx bx-checkbox bx-sm';
+
     ModifyBtn.className = 'modify-todo bx bx-pencil bx-sm';
     ModifyBtn.style.cursor = 'pointer';
 
-    DeleteBtn.className = 'bx bx-trash bx-sm';
+    DeleteBtn.className = 'delete-todo bx bx-trash bx-sm';
     DeleteBtn.style.cursor = 'pointer'
 
     TodoList.appendChild(newTodo);
@@ -34,17 +32,6 @@ function addTodo (event) {
     newTodo.appendChild(DeleteBtn);
 
     TodoInput.value = '';
-
-    DeleteBtn.addEventListener('click', function () {
-        TodoList.removeChild(newTodo);
-    });
-
-    CheckBtn.addEventListener('click', function (event) {
-        ListInput.classList.toggle('checked');
-
-        event.target.classList.toggle('bx-checkbox');
-        event.target.classList.toggle('bx-checkbox-checked');
-    });
 };
 
 TodoForm.addEventListener('submit', addTodo);
@@ -58,4 +45,17 @@ TodoList.addEventListener('click', function (event) {
         event.target.classList.toggle('bx-pencil');
         event.target.classList.toggle('bx-check');
     };
+
+    if (event.target.classList.contains('delete-todo')) {
+        event.target.parentElement.remove();
+    };
+
+    if (event.target.classList.contains('checked-todo')) {
+        const CheckTodo = event.target;
+    
+        CheckTodo.classList.toggle('bx-checkbox');
+        CheckTodo.classList.toggle('bx-checkbox-checked');
+        CheckTodo.previousElementSibling.classList.toggle('checked');
+    };
 });
+
