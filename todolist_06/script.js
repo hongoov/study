@@ -55,11 +55,8 @@ function MakeTodo (TodoContents) {
     DeleteBtn.className = 'delete-todo bx bx-trash bx-sm';
     DeleteBtn.style.cursor = 'pointer';
 
-    TodoList.appendChild(NewTodo);
-    NewTodo.appendChild(ListInput);
-    NewTodo.appendChild(CheckBtn);
-    NewTodo.appendChild(ModifyBtn);
-    NewTodo.appendChild(DeleteBtn);
+    $TodoList.appendChild(NewTodo);
+    NewTodo.append(ListInput, CheckBtn, ModifyBtn, DeleteBtn);
 };
 
 function AddTodo (event) {
