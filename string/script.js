@@ -13,7 +13,8 @@ const exs = [
 	function getSecondChar(inputString) {
         return inputString.charAt(1);
 	},
-	() => inputString.charAt(1);
+	
+	// () => inputString.charAt(1);
 ];
 
 $inputEle.addEventListener('submit', (e) => {
