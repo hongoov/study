@@ -26,11 +26,12 @@ const exs = [
 	 * ```
 	 *
 	 */
-	() => {
+	// () => {
 		// Str 2번째
-		const arr = ['CP song', 'EG Lee', 'CP Hong', 'CP Kim', 'HR Long'];
-		return arr.filter(item => item.startsWith('CP'));
-	},
+		// const arr = ['CP song', 'EG Lee', 'CP Hong', 'CP Kim', 'HR Long'];
+		// return arr.filter(item => item.startsWith('CP'));
+	// },
+	() => ['CP song', 'EG Lee', 'CP Hong', 'CP Kim', 'HR Long'].filter(item => item.startsWith('CP')),
 	/**
 	 * 영어를 입력받아, 모두 소문자로 바꾸어 반환해주는 함수
 	 * ### 요구사항
