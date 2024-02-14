@@ -35,20 +35,14 @@ function formHandler (e) {
 const exs = [
 	(str) => str.charAt(1),
 	() => ['CP song', 'EG Lee', 'CP Hong', 'CP Kim', 'HR Long'].filter(item => item.startsWith('CP')),
-	(str) => str.toLowerCase(),
-	(str) => str.length,
-	() => 'A B C D A A B N D D C C E E'.toLowerCase().replace(/A/g), // --> 오류 수정
+	(str) => (str ?? '').toLowerCase(),
+	(str) => (str ?? '').length,
+	() => 'A B C D A A B N D D C C E E'.replace(/A/g, match => match.toLowerCase())
 ];
 
-form.addEventListener('change', (e) => {
-	const { str1: str1Input, str3: str3Input, str4: str4Input } = e.currentTarget;
-
-	result.forEach((item, index) => {
-		item.textContent = exs[index](index === 0 ? str1Input.value : (index === 2 ? str3Input.value : (index === 3 ? str4Input.value : '')));
+$root.addEventListener('change', () => {
+	document.querySelectorAll('.result').forEach((strRes, idx) => {
+		const inputValue = document.querySelector(`input[name="str${(idx + 1 + '').padStart(2, 0)}"]`)?.value;
+		strRes.textContent = inputValue ? exs[idx](inputValue.trim() === '' ? '' : inputValue) : exs[idx]();
 	});
-	// item 말고 result
 });
-
-// ?? 의미, join
-// change 할 때마다 무언가 일어남
-// 하나 바꾸고 하나 commit
