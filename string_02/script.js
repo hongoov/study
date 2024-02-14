@@ -9,8 +9,8 @@ const elements = [
 ];
 
 $root.innerHTML = `
-	<h1>String 연습하기</h1>
-	<form id="stringExercise" onsubmit="formHandler(e)">
+	<h1>String 연습하기</h1><br>
+	<form id="stringExercise" onsubmit="formHandler(event)">
 		${elements.map(({ subtitle, input }, index) => {
 			const inputSection = input
 				? `<label for="str${(index + 1 + '').padStart(2, 0)}">${input.inputText}</label>
@@ -25,14 +25,10 @@ $root.innerHTML = `
           		<h4 class="result"></h4>
         		</section>
 			`
-		}).join('')}
+		}).join('<br>')}
 	</form>`;
 
-function formHandler (e) {
-	e.preventDefault();
-};
-
-const exs = [
+const strFunctions = [
 	(str) => str.charAt(1),
 	() => ['CP song', 'EG Lee', 'CP Hong', 'CP Kim', 'HR Long'].filter(item => item.startsWith('CP')),
 	(str) => (str ?? '').toLowerCase(),
@@ -40,9 +36,13 @@ const exs = [
 	() => 'A B C D A A B N D D C C E E'.replace(/A/g, match => match.toLowerCase())
 ];
 
+function formHandler (event) {
+	event.preventDefault();
+};
+
 $root.addEventListener('change', () => {
-	document.querySelectorAll('.result').forEach((strRes, idx) => {
-		const inputValue = document.querySelector(`input[name="str${(idx + 1 + '').padStart(2, 0)}"]`)?.value;
-		strRes.textContent = inputValue ? exs[idx](inputValue.trim() === '' ? '' : inputValue) : exs[idx]();
+	document.querySelectorAll('.result').forEach((result, index) => {
+		const inputValue = (document.querySelector(`input[name="str${(index + 1 + '').padStart(2, 0)}"]`)?.value || '').trim();
+    	result.textContent = inputValue ? strFunctions[index](inputValue) : strFunctions[index]();
 	});
 });
