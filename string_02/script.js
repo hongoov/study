@@ -1,10 +1,10 @@
 const $root = document.getElementById('root');
 
 const elements = [
-	{ subtitle: `2번째 문자는?`, input: { label: `문자열 `, placeholder: `문자열을 입력하고 'ENTER'를 누르세요.` } },
+	{ subtitle: `2번째 문자는?`, input: { inputText: `문자열 `, placeholder: `문자열을 입력하고 'ENTER'를 누르세요.` } },
 	{ subtitle: `CP들은?` },
-	{ subtitle: `소문자로 바꾸니`, input: { label: `영어를 `, placeholder: `영어를 입력하고 'ENTER'를 누르세요.` } },
-	{ subtitle: `길이는?`, input: { label: `영어를`, placeholder: `길이를 반환할 문자열을 입력하세요.` } },
+	{ subtitle: `소문자로 바꾸니`, input: { inputText: `영어를 `, placeholder: `영어를 입력하고 'ENTER'를 누르세요.` } },
+	{ subtitle: `길이는?`, input: { inputText: `영어를`, placeholder: `길이를 반환할 문자열을 입력하세요.` } },
 	{ subtitle: `<p>A B C D A A B N D D C C E E</p>A를 모두 a로 바꾸면?` }
 ];
 
