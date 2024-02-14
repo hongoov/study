@@ -32,9 +32,6 @@ function formHandler (e) {
 	e.preventDefault();
 };
 
-const result = Array.from(document.querySelectorAll('.result'));
-// results
-
 const exs = [
 	(str) => str.charAt(1),
 	() => ['CP song', 'EG Lee', 'CP Hong', 'CP Kim', 'HR Long'].filter(item => item.startsWith('CP')),
