@@ -1,13 +1,12 @@
-const root = document.getElementById('root');
+const $root = document.getElementById('root');
 
 const elements = [
-	{num: 1, label: '문자열 ', placeholder: '문자열을 입력하고 ENTER를 누르세요.', subtitle: '2번째 문자는?'},
-	{num: 2, subtitle: 'CP들은?'},
-	{num: 3, label: '영어를 ', placeholder: '영어를 입력하고 ENTER를 누르세요.', subtitle: '소문자로 바꾸니'},
-	{num: 4, label: '영어를 ', placeholder: '길이를 반환할 문자열을 입력하세요,', subtitle: '길이는?'},
-	{num: 5, label: '영어를 ', subtitle: 'A를 모두 a로 바꾸면?'},
+	{ subtitle: `2번째 문자는?`, input: { label: `문자열 `, placeholder: `문자열을 입력하고 'ENTER'를 누르세요.` } },
+	{ subtitle: `CP들은?` },
+	{ subtitle: `소문자로 바꾸니`, input: { label: `영어를 `, placeholder: `영어를 입력하고 'ENTER'를 누르세요.` } },
+	{ subtitle: `길이는?`, input: { label: `영어를`, placeholder: `길이를 반환할 문자열을 입력하세요.` } },
+	{ subtitle: `<p>A B C D A A B N D D C C E E</p>A를 모두 a로 바꾸면?` }
 ];
-// 배열인데 굳이 숫자를 부여한...? --> 불필요한 프로퍼티. num이라는 명칭도 의미가 강하지 않다. label도 좀
 
 elements.forEach((element) => {
     const stringExercise = `
