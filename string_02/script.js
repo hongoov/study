@@ -8,23 +8,29 @@ const elements = [
 	{ subtitle: `<p>A B C D A A B N D D C C E E</p>A를 모두 a로 바꾸면?` }
 ];
 
-elements.forEach((element) => {
-    const stringExercise = `
-        <h2>String 0${element.num}</h2>
-        <section class="str${element.num} strSection">
-            <label for="str${element.num}">${element.label || ''}</label>
-            ${element.placeholder === undefined ? '' : `<input type="text" name="str${element.num}" placeholder='${element.placeholder}' />`}
-			${element.num === 5 ? '<p>A B C D A A B N D D C C E E</p>' : ''}
-            <p class="sub-title">${element.subtitle}</p>
-            <h4 class="result"></h4>
-        </section>
-    `;
-	// element.num === 5 --> 이 부분
+$root.innerHTML = `
+	<h1>String 연습하기</h1>
+	<form id="stringExercise" onsubmit="formHandler(e)">
+		${elements.map(({ subtitle, input }, index) => {
+			const inputSection = input
+				? `<label for="str${(index + 1 + '').padStart(2, 0)}">${input.inputText}</label>
+				   <input type="text" name="str${(index + 1 + '').padStart(2, 0)}" placeholder="${input.placeholder}" />`
+				: '';
 
-    fieldset.innerHTML += stringExercise;
-	// 5번의 재할당이 일어나는데, 한 번에 관리하는 방법은 없을까? --> 불필요한 할당이 4번 발생
-	// innerHTML을 한 번만 하고
-});
+			return `
+				<h2>String ${(index + 1 + '').padStart(2, 0)}</h2>
+				<section class="str${(index + 1 + '').padStart(2, 0)} strSection">
+				${inputSection}
+          		<p class="sub-title">${subtitle}</p>
+          		<h4 class="result"></h4>
+        		</section>
+			`
+		}).join('')}
+	</form>`;
+
+function formHandler (e) {
+	e.preventDefault();
+};
 
 const result = Array.from(document.querySelectorAll('.result'));
 // results
