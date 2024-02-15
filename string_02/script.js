@@ -10,7 +10,7 @@ const elements = [
 
 $root.innerHTML = `
 	<h1>String 연습하기</h1><br>
-	<form id="stringExercise" onsubmit="formHandler(event)">
+	<form id="stringExercise" onsubmit>
 		${elements.map(({ subtitle, input }, index) => {
 			const inputSection = input
 				? `<label for="str${(index + 1 + '').padStart(2, 0)}">${input.inputText}</label>
@@ -35,10 +35,6 @@ const strFunctions = [
 	(str) => (str ?? '').length,
 	() => 'A B C D A A B N D D C C E E'.replace(/A/g, match => match.toLowerCase())
 ];
-
-function formHandler (event) {
-	event.preventDefault();
-};
 
 $root.addEventListener('change', () => {
 	document.querySelectorAll('.result').forEach((result, index) => {
