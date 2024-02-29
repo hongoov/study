@@ -2,7 +2,7 @@
 
 -   TODO: 앱에 대한 설명을 적어보자.
 
-<h2 style="text-indent: 10px; background-color: #00b0f0; font-size: 1.5rem; font-weight: 700; color: white;">🛠️ Stacks</h2>
+## <span style="display: block; text-indent: 10px; background-color: #00b0f0; font-size: 1.5rem; font-weight: 700; color: white;">🛠️ Stacks</span>
 
 ![React](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=FFFFFF)
 ![React](https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=FFFFFF)
